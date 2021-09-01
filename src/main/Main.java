@@ -57,7 +57,7 @@ public class Main {
 			*/
 			
 			//String sql ="select id, nom, email from etudiant";
-			
+			/*
 			String sql = "insert into etudiant(nom,email) values('ab', 'ab@gmail.com')";
 			boolean isResultSet = stmt.execute(sql);
 			
@@ -68,7 +68,11 @@ public class Main {
 			else {
 				 int result = stmt.getUpdateCount();  //getUpdateCount();
 			     System.out.println("ran an update on the database");
-			}
+			}*/
+			
+			ResultSet rs = stmt.executeQuery("select count(*) from etudiant");
+			if(rs.next());
+			System.out.println(rs.getInt(1)); 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
