@@ -45,7 +45,7 @@ public class Main {
 			// 4-Affichage
 
 			
-			/*
+			
 			ResultSet rs = stmt.executeQuery("select id, nom, email from etudiant");
 			while (rs.next()) {
 				int id = rs.getInt("id"); //rs.getInt(1);
@@ -54,7 +54,7 @@ public class Main {
 				
 				System.out.println("ID : "+id+ " Nom : "+name +" Email : "+mail);
 			}
-			*/
+			
 			
 			//String sql ="select id, nom, email from etudiant";
 			/*
@@ -70,9 +70,9 @@ public class Main {
 			     System.out.println("ran an update on the database");
 			}*/
 			
-			ResultSet rs = stmt.executeQuery("select count(*) from etudiant");
-			if(rs.next());
-			System.out.println(rs.getInt(1)); 
+			//ResultSet rs = stmt.executeQuery("select count(*) as nombre from etudiant");
+			//if(rs.next());
+			System.out.println(rs.getInt("nombre")); 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
