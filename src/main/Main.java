@@ -44,15 +44,31 @@ public class Main {
 
 			// 4-Affichage
 
+			
+			/*
 			ResultSet rs = stmt.executeQuery("select id, nom, email from etudiant");
 			while (rs.next()) {
-				int id = rs.getInt("id");
-				String name= rs.getString("nom");
-				String mail= rs.getString("email");
+				int id = rs.getInt("id"); //rs.getInt(1);
+				String name= rs.getString("nom");   //rs.getString(2);
+				String mail= rs.getString("email");  // troisième colonne de type String  rs.getString(3)
 				
 				System.out.println("ID : "+id+ " Nom : "+name +" Email : "+mail);
 			}
-
+			*/
+			
+			//String sql ="select id, nom, email from etudiant";
+			
+			String sql = "insert into etudiant(nom,email) values('ab', 'ab@gmail.com')";
+			boolean isResultSet = stmt.execute(sql);
+			
+			if (isResultSet==true) {
+				ResultSet rs = stmt.getResultSet();  //getResultSet();
+			   System.out.println("ran a Select query");
+			   } 
+			else {
+				 int result = stmt.getUpdateCount();  //getUpdateCount();
+			     System.out.println("ran an update on the database");
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
